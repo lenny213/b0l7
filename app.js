@@ -37,5 +37,5 @@ var bot = new builder.UniversalBot(connector);
 bot.set('storage', tableStorage);
 
 bot.dialog('/', function (session) {
-    session.send('B0l7 repeats: ' + session.message.text);
+    session.send('B0l7 dev_repeats: ' + session.message.text);
 });
