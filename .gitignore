@@ -1,2 +1,5 @@
 # custom
 secret.py
+
+# local cache
+__pycache__
