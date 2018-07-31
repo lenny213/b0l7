@@ -30,7 +30,7 @@ class BotRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_response(202)
         self.end_headers()
         if activity.members_added[0].id != activity.recipient.id:
-            credentials = MicrosoftAppCredentials(APP_ID, APP_PASSWORD)
+            credentials = MicrosoftAppCredentials(secret.APP_ID, secret.APP_PASSWORD)
             reply = BotRequestHandler.__create_reply_activity(activity, 'Hello and welcome to the echo bot!')
             connector = ConnectorClient(credentials, base_url=reply.service_url)
             connector.conversations.send_to_conversation(reply.conversation.id, reply)
@@ -38,13 +38,13 @@ class BotRequestHandler(http.server.BaseHTTPRequestHandler):
     def __handle_message_activity(self, activity):
         self.send_response(200)
         self.end_headers()
-        credentials = MicrosoftAppCredentials(APP_ID, APP_PASSWORD)
+        credentials = MicrosoftAppCredentials(secret.APP_ID, secret.APP_PASSWORD)
         connector = ConnectorClient(credentials, base_url=activity.service_url)
         reply = BotRequestHandler.__create_reply_activity(activity, 'You said: %s' % activity.text)
         connector.conversations.send_to_conversation(reply.conversation.id, reply)
 
     def __handle_authentication(self, activity):
-        credential_provider = SimpleCredentialProvider(APP_ID, APP_PASSWORD)
+        credential_provider = SimpleCredentialProvider(secret.APP_ID, secret.APP_PASSWORD)
         loop = asyncio.new_event_loop()
         try:
             loop.run_until_complete(JwtTokenValidation.authenticate_request(
