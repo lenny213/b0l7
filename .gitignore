@@ -1,5 +1,7 @@
 # custom
 secret.py
+*.sh
+Dockerfile
 
 # local cache
 __pycache__
