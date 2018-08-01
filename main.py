@@ -6,12 +6,10 @@ import json
 import asyncio
 from botbuilder.schema import (Activity, ActivityTypes, ChannelAccount)
 from botframework.connector import ConnectorClient
-from botframework.connector.auth import (MicrosoftAppCredentials,
-                                         JwtTokenValidation, SimpleCredentialProvider)
+from botframework.connector.auth import (MicrosoftAppCredentials,JwtTokenValidation, SimpleCredentialProvider)
 
 # import secret vars from separate file
 import secret
-
 
 class BotRequestHandler(http.server.BaseHTTPRequestHandler):
 
@@ -78,7 +76,7 @@ class BotRequestHandler(http.server.BaseHTTPRequestHandler):
 
 
 try:
-    SERVER = http.server.HTTPServer(('localhost', 9000), BotRequestHandler)
+    SERVER = http.server.HTTPServer(('localhost', 10100), BotRequestHandler)
     print('Started http server')
     SERVER.serve_forever()
 except KeyboardInterrupt:
