@@ -13,8 +13,8 @@ from botbuilder.core import (BotFrameworkAdapter, BotFrameworkAdapterSettings, T
 
 import secret
 
-APP_ID = 'secret.APP_ID'
-APP_PASSWORD = 'secret.APP_PASSWORD'
+APP_ID = secret.APP_ID
+APP_PASSWORD = secret.APP_PASSWORD
 PORT = 10100
 SETTINGS = BotFrameworkAdapterSettings(APP_ID, APP_PASSWORD)
 ADAPTER = BotFrameworkAdapter(SETTINGS)
