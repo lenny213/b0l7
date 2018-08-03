@@ -6,3 +6,4 @@ Dockerfile
 # local cache
 __pycache__
 .DS_Store
+.vs
