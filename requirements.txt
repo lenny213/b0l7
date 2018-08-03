@@ -2,6 +2,8 @@ asn1crypto
 botbuilder
 botbuilder-schema
 botframework-connector
+botbuilder-core
+aiohttp
 certifi
 cffi
 chardet
