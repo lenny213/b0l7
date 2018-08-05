@@ -7,4 +7,5 @@ Dockerfile
 __pycache__
 .DS_Store
 .vs
-.direnv
+.env
+.vscode
