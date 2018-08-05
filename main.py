@@ -8,8 +8,7 @@ This sample shows how to create a simple EchoBot with state.
 
 from aiohttp import web
 from botbuilder.schema import (Activity, ActivityTypes)
-from botbuilder.core import (BotFrameworkAdapter, BotFrameworkAdapterSettings, TurnContext,
-                             ConversationState, MemoryStorage, UserState)
+from botbuilder.core import (BotFrameworkAdapter, BotFrameworkAdapterSettings, TurnContext, ConversationState, MemoryStorage, UserState)
 
 import secret
 
