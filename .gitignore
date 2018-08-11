@@ -5,6 +5,9 @@ secret.py
 # local cache
 __pycache__
 .DS_Store
+<<<<<<< HEAD
 .vs
+=======
+>>>>>>> origin/dev_python
 .env
 .vscode
