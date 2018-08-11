@@ -1,8 +1,9 @@
 # custom
 secret.py
 *.sh
-Dockerfile
 
 # local cache
 __pycache__
 .DS_Store
+.env
+.vscode
