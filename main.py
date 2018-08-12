@@ -46,12 +46,10 @@ async def handle_message(context: TurnContext) -> web.Response:
     # Access the state for the conversation between the user and the bot.
     state = await conversation_state.get(context)
 
-    if hasattr(state, 'counter'):
-        state.counter += 1
+    if context.activity.text.startswith('hello') or context.activity.text.startswith('hi'):
+        response = await create_reply_activity(context.activity, f'Hi!')
     else:
-        state.counter = 1
-
-    response = await create_reply_activity(context.activity, f'{state.counter}: You said {context.activity.text}.')
+        response = await create_reply_activity(context.activity, f'You said {context.activity.text}.')
     await context.send_activity(response)
     return web.Response(status=202)
 
