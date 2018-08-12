@@ -11,6 +11,9 @@ from botbuilder.schema import (Activity, ActivityTypes)
 from botbuilder.core import (BotFrameworkAdapter, BotFrameworkAdapterSettings, TurnContext, 
                              ConversationState, MemoryStorage, UserState)
 
+# for time message 
+import time
+
 import secret
 
 APP_ID = secret.APP_ID
@@ -53,6 +56,8 @@ async def handle_message(context: TurnContext) -> web.Response:
 
     if context.activity.text.startswith('hello') or context.activity.text.startswith('hi'):
         response = await create_reply_activity(context.activity, f'Hi!')
+    elif context.activity.text.startswith('time'):
+        response = await create_reply_activity(context.activity, f'{time.ctime()}')
     else:
         response = await create_reply_activity(context.activity, f'You said: {context.activity.text}.')
     await context.send_activity(response)
